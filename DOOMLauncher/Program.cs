@@ -8,9 +8,10 @@ namespace DOOMLauncher
     {
         public static Mem m = new Mem();
 
-        static void Main()
+        static void Main(string[] args)
         {
-            var doom = Process.Start("DOOMx64vk.exe");
+            string launchArgs = String.Join(" ", args);
+            var doom = Process.Start("DOOMx64vk.exe", launchArgs);
             doom.WaitForExit();
 
             while (true)
